@@ -17,7 +17,7 @@
     })
   };
   $.fn.fancyletter.defaults = {
-    commonClass: 'fancy-letter',
+    commonClass: 'ltr',
     ltrClassPrefix: 'ltr-',
     characters: '[a-zA-Z]'
   }
