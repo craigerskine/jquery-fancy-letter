@@ -19,7 +19,7 @@ selector = your element you'd like to manipulate
 
 ```html
 <p class="blah">
-  <span class="fancy-letter ltr-b">B</span>
+  <span class="ltr ltr-b">B</span>
   lah
 </p>
 ```
