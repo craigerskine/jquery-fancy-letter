@@ -6,20 +6,32 @@ Requires jQuery.
 
 ```code
 $(selector).fancyletter();
+```
 
 selector = your element you'd like to manipulate
-```
+
 ### Example
 
-```javascript
+```html
+<p class="blah">Chicken</p>
+<p class="blah">Foo</p>
+<p class="blah">Bar</p>
+
+<script>
   $('.blah').fancyletter();
+</script>
 ```
 
 ### Result
 
 ```html
 <p class="blah">
-  <span class="ltr ltr-b">B</span>
-  lah
+  <span class="ltr ltr-c">C</span>hicken
+</p>
+<p class="blah">
+  <span class="ltr ltr-f">F</span>oo
+</p>
+<p class="blah">
+  <span class="ltr ltr-b">B</span>ar
 </p>
 ```
