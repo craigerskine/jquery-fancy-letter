@@ -6,21 +6,10 @@
   <title>jQuery Fancy Letter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.7.4/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
   <style>
-    body { padding: 0; background: #333; color: #666; }
-    h1,h2,h3,h4,h5,h6 { margin: 0 0 10px; }
-    p,ul,ol { margin: 0 0 20px; }
-    ul ul,ul ol,ol ol,ol ul { margin: 0; }
-    hr { margin: 0 0 19px; }
-    main { padding: 40px 0 20px; background: #FFF; }
-    footer { border-top: 1px solid rgba(0,0,0,0.1); padding: 20px; text-align: center; }
-    footer a { color: #999; }
-    footer a:hover,footer a:focus { color: #CCC; }
-    .container { max-width: 940px; }
-    .jumbotron { margin: 0; background: transparent; color: #CCC; }
     p.fancy-ltr { padding-left: 44px; line-height: 2; position: relative; }
 
     .ltr { margin-right: 2px; padding: 5px; width: 40px; height: 40px; background: #EEE; color: #999; display: inline-block; text-align: center; border-radius: 4px; }
@@ -41,36 +30,51 @@
   </style>
 
 </head>
-<body>
+<body class="bg-grey-darkest text-black leading-normal">
 
-  <header class="jumbotron">
-    <div class="container text-center">
-      <h1>jQuery Fancy Letter</h1>
-      <p>A jQuery plugin that gives you more control than :first-letter</p>
-      <p><a href="https://github.com/craigerskine/jquery-fancy-letter/" class="btn btn-default btn-lg"><i class="fa fa-fw fa-github" role="presentation" aria-hidden="true"></i> Download</a></p>
-    </div>
+  <header class="py-6 md:py-16 px-4 text-white text-center md:text-2xl">
+    <h1 class="mb-3">jQuery Fancy Letter</h1>
+    <p class="mb-8 font-light md:text-lg opacity-50">A jQuery plugin that gives you more control than :first-letter</p>
+    <p><a href="https://github.com/craigerskine/jquery-fancy-letter/" class="py-2 px-4 bg-grey-darker hover:bg-white focus:bg-white text-grey hover:text-black focus:text-black inline-block no-underline rounded"><i class="fa fa-fw fa-github" role="presentation" aria-hidden="true"></i> Download</a></p>
   </header>
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h2 class="fancy-ltr">Lorem</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi sapiente corporis rem repellat inventore ullam nostrum maiores porro, alias soluta veritatis pariatur dignissimos sed odit, ad similique, neque sequi facere.</p>
-          <hr class="invisible" />
-          <h2 class="fancy-ltr">Ipsum</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque mollitia, velit vel voluptas quo dignissimos nemo nostrum, placeat dicta id quaerat. Maiores est officiis ducimus aspernatur. Nam quos porro, praesentium.</p>
-          <hr class="invisible" />
-          <p class="fancy-ltr">Dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur minima vero aliquam obcaecati distinctio libero esse, corporis tenetur, harum ab dolores nihil unde alias sed totam voluptas voluptatem beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel est, laudantium tenetur placeat aliquid qui excepturi? Quod impedit, ducimus. Est, libero quas eaque reprehenderit.</p>
-        </div>
+
+  <main class="py-4 md:py-16 px-4 bg-white">
+    <div class="mx-auto max-w-lg">
+      <h2 class="mb-2 fancy-ltr">Lorem</h2>
+      <p class="mb-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi sapiente corporis rem repellat inventore ullam nostrum maiores porro, alias soluta veritatis pariatur dignissimos sed odit, ad similique, neque sequi facere.</p>
+      <h2 class="mb-2 fancy-ltr">Ipsum</h2>
+      <p class="mb-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque mollitia, velit vel voluptas quo dignissimos nemo nostrum, placeat dicta id quaerat. Maiores est officiis ducimus aspernatur. Nam quos porro, praesentium.</p>
+      <p class="mb-12 fancy-ltr">Dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur minima vero aliquam obcaecati distinctio libero esse, corporis tenetur, harum ab dolores nihil unde alias sed totam voluptas voluptatem beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vel est, laudantium tenetur placeat aliquid qui excepturi? Quod impedit, ducimus. Est, libero quas eaque reprehenderit.</p>
+      <h4 class="mb-1 text-grey uppercase">Usage</h4>
+      <div class="p-4 font-mono bg-grey-darker text-grey-light overflow-auto rounded">
+        <pre>&lt;h3 class="fancy-ltr"&gt;Heading&lt;/h3&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.fancyletter.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+    $('.fancy-ltr').fancyletter(
+      // optional settings - just remove all of this if you want to keep defaults
+      {
+        // base class of character
+        commonClass: 'ltr',
+        // prefix class of character - actual lowercase character will get appended to this string
+        prefixClass: 'ltr-',
+        // if you want to match things other than letters, you better be good at regex
+        characters: '[a-zA-Z]'
+      }
+    );
+  });
+&lt;/script&gt;</pre>
       </div>
     </div>
   </main>
-  <footer>
-    Made with <i class="fa fa-fw fa-heart text-danger" role="presentation" title="Love"></i> by <a href="http://craigerskine.com/">Craig Erskine</a>
+
+  <footer class="py-8 text-xs text-grey-dark text-center font-bold uppercase">
+    Made with <i class="fa fa-fw fa-heart text-red-light" role="presentation" title="Love"></i> by <a href="http://craigerskine.com/" class="text-grey-light hover:text-white focus:text-white no-underline hover:underline focus:underline">Craig Erskine</a>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="jquery.fancyletter.js"></script>
   <script>
     $(function(){
