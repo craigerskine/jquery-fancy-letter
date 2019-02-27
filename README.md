@@ -10,6 +10,20 @@ $(selector).fancyletter();
 
 selector = your element you'd like to manipulate
 
+### Options
+```
+{
+  // base class of character
+  commonClass: 'ltr',
+  
+  // prefix class of character - actual lowercase character will get appended to this string
+  prefixClass: 'ltr-',
+  
+  // if you want to match things other than letters, you better be good at regex
+  characters: '[a-zA-Z]'
+}
+```
+
 ### Example
 
 ```html
